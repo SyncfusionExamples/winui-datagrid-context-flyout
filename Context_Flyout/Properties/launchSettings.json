@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Context_Flyout (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Context_Flyout (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
