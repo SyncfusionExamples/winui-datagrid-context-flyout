@@ -1,60 +1,36 @@
-# winui-datagrid-context-flyout
-DataGrid provides an entirely customizable context flyout to commonly expose functionality on the user interface. Context flyouts can be created for different rows in an efficient manner.
+# WinUI Data Grid - Context Flyout
 
-**XAML**
-```xml
-xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+This sample demonstrates how to customize and use the context flyout options in the Syncfusion WinUI Data Grid. It shows how to configure different menu items for record-level actions and grid interactions such as sorting, grouping, filtering, and summary operations.
 
-<dataGrid:SfDataGrid.RecordContextFlyout>
-    <MenuFlyout>
-        <MenuFlyoutItem Text="Cut" />
-        <MenuFlyoutItem Text="Copy" />
-        <MenuFlyoutItem Text="Paste" />
-        <MenuFlyoutItem Text="Delete" />
-    </MenuFlyout>
-</dataGrid:SfDataGrid.RecordContextFlyout>
-```
-
-**C#**
-```csharp
-using Syncfusion.UI.Xaml.Core;
-using Syncfusion.UI.Xaml.DataGrid;
-
-public class OrderInfoViewModel
-{
-    public OrderInfoViewModel()
-    {
-        _gridCopyCommand = new DelegateCommand(Copy);
-    }
-        
-    private DelegateCommand _gridCopyCommand;
-
-    /// <summary>
-    /// Gets and sets the copy command
-    /// </summary>
-    public DelegateCommand GridCopyCommand
-    {
-        get { return _gridCopyCommand; }
-        set { _gridCopyCommand = value; }
-    }
-    
-    /// <summary>
-    /// Copy the specified record.
-    /// </summary>
-    /// <param name="param">
-    /// Specifies the <see cref="Syncfusion.UI.Xaml.DataGrid.GridRecordContextFlyoutInfo"/>
-    /// </param>
-    public void Copy(object param)
-    {
-        if (param is GridRecordContextFlyoutInfo)
-        {	
-            var dataGrid = (param as GridRecordContextFlyoutInfo).DataGrid;
-            dataGrid.ClipboardController.Copy();
-        }
-    }
-}
-```
+The following image shows the context flyout options available in the WinUI Data Grid:
 
 ![Context Flyout in WinUI DataGrid](Context_Flyout.gif)
 
-Take a moment to peruse the [WinUI DataGrid - Context Flyout](https://help.syncfusion.com/winui/datagrid/context-flyout) documentation, to learn more about context flyout with examples.
+## Features
+
+- Record context flyout with Cut, Copy, Paste, and Delete actions
+- Header context flyout with sorting, grouping, and filtering options
+- Group drop item context flyout with expand/collapse and sorting commands
+- Group drop area context flyout for clearing groups
+- Group caption and summary context flyouts
+- Table summary context flyout with Count, Min, Max, Average, and Sum actions
+
+## Requirements
+
+- Visual Studio 2022
+- .NET 9.0 SDK or later
+- Windows 10 version 1809 or later
+- Windows App SDK
+- Syncfusion WinUI controls
+
+## How to run this example
+
+1. Clone the repository.
+2. Open the `Context_Flyout/Context_Flyout.sln` file in Visual Studio 2022.
+3. Restore the required NuGet packages.
+4. Build the project.
+5. Run the sample on a Windows machine or emulator.
+
+## Documentation
+
+For more information about the WinUI Data Grid context flyout, refer to the [WinUI DataGrid - Context Flyout documentation](https://help.syncfusion.com/winui/datagrid/context-flyout).
